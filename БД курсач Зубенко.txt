@@ -1,0 +1,147 @@
+
+create table Комплектация
+(
+  ID Int Primary key,
+  Тип_топлива nvarchar(20) not null,
+  Объем_двигателя nvarchar(6) not null,
+  Мощность_двигателя int not null,
+  Тип_КПП nvarchar(20) not null,
+  Тип_привода nvarchar(20) not null,
+  Тип_кузова nvarchar(20) not null,
+  Цвет_кузова nvarchar(20) not null,
+  Руль nvarchar(20) not null,
+  Название_комплектации nvarchar(20) not null,
+);
+
+
+create table Поколение
+(
+  ID Int Primary key,
+  Название_поколения nvarchar(22) not null,
+);
+
+
+create table Модель
+(
+  ID Int Primary key,
+  Название_модели nvarchar(22) not null,
+  Поколение_ID int,
+  FOREIGN KEY (Поколение_ID) REFERENCES Поколение(ID),
+);
+
+
+create table Марка
+(
+  ID Int Primary key,
+  Название_Марки nvarchar(22) not null,
+  Модель_ID int,
+  FOREIGN KEY (Модель_ID) REFERENCES Модель(ID),
+);
+
+
+create table Автомобиль
+(
+  ID Int Primary key,
+  Марка_ID int,
+  FOREIGN KEY (Марка_ID) REFERENCES Марка(ID),
+  Пробег int not null,
+  Цена int not null,
+  Год_выпуска int not null,
+  Комплектация_ID int,
+  FOREIGN KEY ( Комплектация_ID) REFERENCES  Комплектация(ID),
+  Изображение Nvarchar(255) not null,
+);
+
+
+insert into Комплектация
+Values 
+(1,'бензин','1.9',118,'МКПП','задний','Седан','Черный','левый','318iMT'),
+(2,'бензин','2.2',170,'АКПП','задний','Седан','Серебристый','левый','320iAT'),
+(3,'бензин','4.4',560,'робот','задний','Седан','Синий','левый','4.4 AMT'),
+(4,'дизель','2.0',190,'робот','полный','Седан','Красный','левый','2.0 TDI'),
+(5,'бензин','3.0',225,'МКПП','задний','Седан','Серый','Правый','3.0 SZ');
+
+
+insert into Поколение
+values 
+(1,'1'),
+(2,'1 Рест'),
+(3,'2'),
+(4,'2 Рест'),
+(5,'3'),
+(6,'3 Рест'),
+(7,'4'),
+(8,'4 Рест'),
+(9,'5'),
+(10,'5 Рест');
+
+
+
+insert into Модель
+values 
+(1,'3-Series',1),
+(2,'M5',10),
+(3,'A5',9),
+(4,'Supra',4);
+
+insert into Марка
+values 
+(1,'BMW',1),
+(2,'BMW',2),
+(3,'Audi',3),
+(4,'Toyota',4);
+
+
+insert into Автомобиль
+values
+(1,1,184000,2030000,2009,1,'C:\Users\Александр\Desktop\Учеба\baleva WPF\Пикчи\3series_chornijpg.jpeg'),
+(2,1,84000,2500000,2012,2,'C:\Users\Александр\Desktop\Учеба\baleva WPF\Пикчи\3series_serai.jpg'),
+(3,2,15000,4000000,2019,3,'C:\Users\Александр\Desktop\Учеба\baleva WPF\Пикчи\m5.jpeg'),
+(4,3,44000,3420000,2016,4,'C:\Users\Александр\Desktop\Учеба\baleva WPF\Пикчи\a5.jpeg'),
+(5,4,600000,1500000,1996,5,'C:\Users\Александр\Desktop\Учеба\baleva WPF\Пикчи\supra.jpeg');
+
+
+SELECT 
+    a.ID AS 'Автомобиль_ID',
+    m.Название_марки AS 'Марка',
+    mo.Название_модели AS 'Модель',
+    p.Название_поколения AS 'Поколение',
+    k.Тип_топлива,
+    k.Объем_двигателя,
+    k.Мощность_двигателя,
+    k.Тип_КПП,
+    k.Тип_привода,
+    k.Тип_кузова,
+    k.Цвет_кузова,
+    k.Руль,
+    k.Название_комплектации,
+    a.Пробег,
+    a.Цена,
+    a.Год_выпуска,
+    a.Изображение
+FROM 
+    Автомобиль a
+INNER JOIN 
+    Марка m ON a.Марка_ID = m.ID
+INNER JOIN 
+    Модель mo ON m.Модель_ID = mo.ID
+INNER JOIN 
+    Поколение p ON mo.Поколение_ID = p.ID
+INNER JOIN 
+    Комплектация k on a.ID = k.ID
+
+
+
+Create table logins
+(
+	ID int Primary key,
+	Logins nvarchar(20) not null,
+	pass nvarchar(20) not null,
+	roles nvarchar(20) not null
+)
+
+insert into logins
+values
+(1,'admin','adm','admin'),
+(2,'guest','1234','guest'),
+(3,'user1','bebra','user');
