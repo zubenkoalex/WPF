@@ -30,13 +30,14 @@ namespace Baleva_bd_WPF
         {
             return sqlConnection;
         }
-
-
-
-
-
-
-
+        public DataTable SelectData(string query)
+        {
+            SqlCommand sqlCommand = new SqlCommand(query, GetConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            return dataTable;      
+        }
     }
 }
 

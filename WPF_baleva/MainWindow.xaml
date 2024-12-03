@@ -40,8 +40,9 @@
         </DataGrid>
         <Label Grid.Row="0" Content="Поиск по году выпуска" FontSize="19" Margin="920,27,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="920,67,0,0" TextWrapping="Wrap" Text="" Width="208" Height="41"/>
-        <Label Content="Фильтровать по марке:" FontSize="19" HorizontalAlignment="Left"  Margin="920,134,0,186" Width="230"/>
+        <Label Content="Фильтровать по году выпуска:" FontSize="19" HorizontalAlignment="Left"  Margin="920,134,0,186" Width="230"/>
         <ComboBox x:Name="MarkaCB"  SelectionChanged="MarkaCB_SelectionChanged" Margin="920,188,288,115"/>
+
         <Label Content="Логин" HorizontalAlignment="Left" Margin="72,35,0,0" VerticalAlignment="Top" Height="27" Width="96"/>
         <TextBox HorizontalAlignment="Left" Margin="72,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
         <TextBox HorizontalAlignment="Left" Margin="72,124,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged"/>
