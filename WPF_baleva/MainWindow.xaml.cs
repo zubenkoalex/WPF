@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_baleva;
 using static Azure.Core.HttpHeader;
 using static Baleva_bd_WPF.database;
 
@@ -103,6 +104,14 @@ namespace Baleva_bd_WPF
      
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

@@ -262,3 +262,7 @@ C:\Users\Anastasia\Downloads\baleva WPF\WPF_baleva\obj\Debug\WPF_baleva.csproj.C
 C:\Users\Anastasia\Downloads\baleva WPF\WPF_baleva\obj\Debug\WPF_baleva.csproj.Up2Date
 C:\Users\Anastasia\Downloads\baleva WPF\WPF_baleva\obj\Debug\WPF_baleva.exe
 C:\Users\Anastasia\Downloads\baleva WPF\WPF_baleva\obj\Debug\WPF_baleva.pdb
+C:\Users\Александр\Desktop\Учеба\baleva WPF\WPF_baleva\obj\Debug\LoginWindow.g.cs
+C:\Users\Александр\Desktop\Учеба\baleva WPF\WPF_baleva\obj\Debug\LoginWindow.baml
+C:\Users\Александр\Desktop\Учеба\baleva WPF\WPF_baleva\obj\Debug\AdminWindow.g.cs
+C:\Users\Александр\Desktop\Учеба\baleva WPF\WPF_baleva\obj\Debug\AdminWindow.baml
